@@ -14,4 +14,4 @@ ds['sales'] = ds['price'].astype('float') * ds['quantity'].astype('int')
 
 ds.drop(['price', 'quantity', 'product'], axis=1, inplace=True)
 
-ds.to_csv('data/output.csv')
+ds.to_csv('data/output.csv', index=False)

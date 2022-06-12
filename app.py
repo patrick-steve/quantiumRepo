@@ -4,12 +4,13 @@ import pandas as pd
 
 app = Dash(__name__)
 
-df = pd.read_csv('data/output.csv')
+df = pd.read_csv('formatted_data.csv')
+df = df.sort_values(by='date')
 
 fig = px.line(df, x="date", y="sales", color="region")
 
 app.layout = html.Div(children=[
-    html.H1(children="Sales Price Graph", style={"backgroundColor": "#161A1D", "color": "#2178BC", "textAlign": 'center'}),
+    html.H1("Sales Price Graph", id="header", style={"backgroundColor": "#161A1D", "color": "#2178BC", "textAlign": 'center'}),
     
     html.Div([
         dcc.Dropdown(
