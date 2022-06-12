@@ -9,7 +9,7 @@ df = pd.read_csv('data/output.csv')
 fig = px.line(df, x="date", y="sales", color="region")
 
 app.layout = html.Div(children=[
-    html.H1(children="Sales Price", style={"backgroundColor": "#161A1D", "color": "#2178BC", "textAlign": 'center'}),
+    html.H1(children="Sales Price Graph", style={"backgroundColor": "#161A1D", "color": "#2178BC", "textAlign": 'center'}),
     
     html.Div([
         dcc.Dropdown(
