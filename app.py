@@ -17,7 +17,7 @@ app.layout = html.Div(children=[
             "Select Region",
             id="region-selector"
         )
-    ]),
+    ], style={"backgroundColor": "#161A1D"}),
     
     dcc.Graph(
         id="sales_graph",
@@ -27,7 +27,7 @@ app.layout = html.Div(children=[
 
 @app.callback(
     Output('sales_graph', 'figure'),
-    Input('region-selector', 'intput')
+    Input('region-selector', 'value')
 )
 def update_graph(region):
     fig = px.line(df[df['region'] == region], x="date", y="sales")
